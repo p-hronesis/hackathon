@@ -167,11 +167,9 @@ async function initializeAgent() {
  * @param config - Agent configuration
  * @param interval - Time interval between actions in seconds
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function runAutonomousMode(agent: any, config: any, interval = 10) {
   console.log("Starting autonomous mode...");
 
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     try {
       const thought =
@@ -205,7 +203,6 @@ async function runAutonomousMode(agent: any, config: any, interval = 10) {
  * @param agent - The agent executor
  * @param config - Agent configuration
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function runChatMode(agent: any, config: any) {
   console.log("Starting chat mode... Type 'exit' to end.");
 
@@ -217,7 +214,6 @@ async function runChatMode(agent: any, config: any) {
   const question = (prompt: string): Promise<string> => new Promise((resolve) => rl.question(prompt, resolve));
 
   try {
-    // eslint-disable-next-line no-constant-condition
     while (true) {
       const userInput = await question("\nPrompt: ");
 
@@ -259,7 +255,6 @@ async function chooseMode(): Promise<"chat" | "auto"> {
 
   const question = (prompt: string): Promise<string> => new Promise((resolve) => rl.question(prompt, resolve));
 
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     console.log("\nAvailable modes:");
     console.log("1. chat    - Interactive chat mode");
